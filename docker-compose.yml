@@ -1,0 +1,14 @@
+version: "2"
+services:
+  app_node:
+    image: node_arclinux
+    container_name: node_server_env
+    build: .
+    volumes:
+      - ./node_server:/prj/node_server
+    tty: true
+    ports:
+      - "5001:5000"
+    stdin_open: true
+    privileged: true
+    command: /sbin/init
